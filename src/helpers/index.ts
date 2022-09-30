@@ -7,7 +7,7 @@ export const getHTMLTitle = (url: string): Promise<Link | null> => {
     try {
       // to accomodate for URL like e.g www.damiisdandy.com
       const URL = !url.startsWith('http') ? `https://${url}` : url;
-      // Used puppeteer because, some websites like twitter has some client side-rendered pages
+      // Used puppeteer because, some websites like twitter has some client-side rendered pages
       // So using normal axios to fetch the html isn't going to get the dynamic <title/>
       const browser = await puppeteer.launch()
 

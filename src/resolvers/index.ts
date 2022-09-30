@@ -10,7 +10,7 @@ export const resolvers = {
     records: async (_: any, args: RecordsArgs): Promise<Records> => {
       const { message } = args;
 
-      // match any word that starts with @ and word characters (\w)
+      // match any word that starts with @ and contains word characters (\w)
       const mentions = message.match(/(^|\s)@(\w+)/g) || [];
 
       // get all words that are within parenthesis ()
@@ -33,7 +33,7 @@ export const resolvers = {
       }
     }
   },
-  // using the JSON type, because the exercise calls the links type without any sub-fields
+  // using the JSON type, because the exercise calls the links field without specifying any sub-fields
   JSON: GraphQLJSON,
   JSONObject: GraphQLJSONObject,
 };
